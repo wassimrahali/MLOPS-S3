@@ -1,3 +1,4 @@
+nohup: ignoring input
 Your deployments are being served and polling for scheduled runs!
 
 Deployments
@@ -15,12 +16,12 @@ To trigger any of these deployments, use the following command:
 
 You can also trigger your deployments via the Prefect UI: http://127.0.0.1:4200/deployments
 
-09:28:11.215 | INFO    | Flow run 'unique-bobcat' - Downloading flow code from storage at '.'
-09:28:11.717 | INFO    | Flow run 'unique-bobcat' - Beginning flow run 'unique-bobcat' for flow 'all'
-09:28:11.719 | INFO    | Flow run 'unique-bobcat' - View at http://127.0.0.1:4200/runs/flow-run/60ea5163-c86d-4a6a-ba8c-45528a04f0b9
-09:28:13.673 | INFO    | Flow run 'miniature-swift' - Beginning subflow run 'miniature-swift' for flow 'code'
-09:28:13.675 | INFO    | Flow run 'miniature-swift' - View at http://127.0.0.1:4200/runs/flow-run/9a2a9c0f-2f59-4da0-bf46-146a6a603ccd
-09:28:13.789 | INFO    | Task run 'fetch-project-5a3' - Finished in state Completed()
+10:12:44.690 | INFO    | Flow run 'agate-moth' - Downloading flow code from storage at '.'
+10:12:45.201 | INFO    | Flow run 'agate-moth' - Beginning flow run 'agate-moth' for flow 'all'
+10:12:45.202 | INFO    | Flow run 'agate-moth' - View at http://127.0.0.1:4200/runs/flow-run/2f6f882e-722f-4034-9ab2-331e6ec8abe4
+10:12:47.170 | INFO    | Flow run 'axiomatic-platypus' - Beginning subflow run 'axiomatic-platypus' for flow 'code'
+10:12:47.172 | INFO    | Flow run 'axiomatic-platypus' - View at http://127.0.0.1:4200/runs/flow-run/fc3db1a7-f56c-44cb-8819-81dcec46e63a
+10:12:47.370 | INFO    | Task run 'fetch-project-70d' - Finished in state Completed()
 Remote project fetch disabled.
 $ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m pip install -r requirements.txt
 Requirement already satisfied: prefect<4.0,>=3.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 1)) (3.9.4)
@@ -146,16 +147,13 @@ Requirement already satisfied: beartype>=0.20.0 in ./.venv/lib/python3.12/site-p
 Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.12/site-packages (from requests->apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.5.2)
 Requirement already satisfied: shellingham>=1.3.0 in ./.venv/lib/python3.12/site-packages (from typer>=0.15.1->pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.5.4)
 Requirement already satisfied: oauthlib>=3.0.0 in ./.venv/lib/python3.12/site-packages (from requests-oauthlib->apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.0.1)
-09:28:24.699 | INFO    | Task run 'install-dependencies-2f6' - Finished in state Completed()
+10:13:03.146 | INFO    | Task run 'install-dependencies-0dc' - Finished in state Completed()
 $ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m black --line-length=100 model_pipeline.py main.py pipeline_prefect.py
 All done! ✨ 🍰 ✨
 3 files left unchanged.
-09:28:26.292 | INFO    | Task run 'format-code-5eb' - Finished in state Completed()
+10:13:04.598 | INFO    | Task run 'format-code-700' - Finished in state Completed()
 $ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m flake8 --max-line-length=100 model_pipeline.py main.py pipeline_prefect.py
-09:28:26.378 | INFO    | Flow run 'legendary-chihuahua' - Downloading flow code from storage at '.'
-09:28:26.959 | INFO    | Flow run 'legendary-chihuahua' - Beginning flow run 'legendary-chihuahua' for flow 'train'
-09:28:26.960 | INFO    | Flow run 'legendary-chihuahua' - View at http://127.0.0.1:4200/runs/flow-run/0eba9b45-6665-4d2c-91d9-340659767529
-09:28:27.350 | INFO    | Task run 'code-quality-708' - Finished in state Completed()
+10:13:05.818 | INFO    | Task run 'code-quality-0c2' - Finished in state Completed()
 $ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m bandit -q model_pipeline.py main.py pipeline_prefect.py
 [manager]	WARNING	Test in comment: subprocess is not a test name or id, ignoring
 [manager]	WARNING	Test in comment: is is not a test name or id, ignoring
@@ -172,51 +170,5 @@ $ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m bandit -q model_pipel
 [manager]	WARNING	Test in comment: a is not a test name or id, ignoring
 [manager]	WARNING	Test in comment: shell is not a test name or id, ignoring
 [tester]	WARNING	nosec encountered (B603), but no failed test on file ./pipeline_prefect.py:22
-09:28:30.148 | INFO    | Task run 'code-security-2bd' - Finished in state Completed()
+10:13:08.800 | INFO    | Task run 'code-security-a89' - Finished in state Completed()
 $ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m pytest tests/
-09:28:39.728 | INFO    | Task run 'prepare-data-cb7' - Finished in state Completed()
-09:28:39.945 | INFO    | Task run 'train-model-793' - Finished in state Completed()
-09:28:40.079 | INFO    | Task run 'save-model-4ca' - Finished in state Completed()
-09:28:40.138 | INFO    | Flow run 'legendary-chihuahua' - Finished in state Completed()
-09:28:43.646 | INFO    | prefect.runner - SIGTERM received, initiating graceful shutdown...
-09:28:43.705 | WARNING | prefect.FlowRunCancellingObserver - The FlowRunCancellingObserver websocket failed with an exception. Switching to polling mode until it reconnects.
-Traceback (most recent call last):
-  File "/usr/lib/python3.12/asyncio/selector_events.py", line 1013, in _read_ready__data_received
-    data = self._sock.recv(self.max_size)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ConnectionResetError: [Errno 104] Connection reset by peer
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/_internal/_observation_delivery.py", line 334, in _consume
-    async for event in self._subscriber:
-  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/events/clients.py", line 903, in __anext__
-    message = orjson.loads(await self._websocket.recv())
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 324, in recv
-    raise self.protocol.close_exc from self.recv_exc
-websockets.exceptions.ConnectionClosedError: received 1012 (service restart); then sent 1012 (service restart)
-09:28:43.705 | WARNING | prefect.FlowRunSuspendingObserver - The FlowRunSuspendingObserver websocket failed with an exception. Switching to polling mode until it reconnects.
-Traceback (most recent call last):
-  File "/usr/lib/python3.12/asyncio/selector_events.py", line 1013, in _read_ready__data_received
-    data = self._sock.recv(self.max_size)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ConnectionResetError: [Errno 104] Connection reset by peer
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/_internal/_observation_delivery.py", line 334, in _consume
-    async for event in self._subscriber:
-  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/events/clients.py", line 903, in __anext__
-    message = orjson.loads(await self._websocket.recv())
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 324, in recv
-    raise self.protocol.close_exc from self.recv_exc
-websockets.exceptions.ConnectionClosedError: received 1012 (service restart); then sent 1012 (service restart)
-09:28:43.753 | ERROR   | Task run 'unit-tests-24a' - Crash detected! Execution was aborted by a termination signal.
-09:28:43.808 | ERROR   | Task run 'unit-tests-24a' - Finished in state Crashed('Execution was aborted by a termination signal.')
-09:28:43.813 | INFO    | Flow run 'miniature-swift' - Flow run was cancelled.
-09:28:50.834 | WARNING | prefect.events.clients - Unable to connect to 'ws://127.0.0.1:4200/api/events/in'. Please check your network settings to ensure websocket connections to the API are allowed. Otherwise event data (including task run data) may be lost. Reason: [Errno 111] Connect call failed ('127.0.0.1', 4200). Set PREFECT_DEBUG_MODE=1 to see the full error.
-09:28:50.835 | ERROR   | GlobalEventLoopThread | prefect._internal.concurrency - Service 'EventsWorker' failed to process item Event(occurred=DateTime(2026, 11, 23, 8, 28, 43, 753782, tzinfo=Timezone('UTC')), event='prefect.task-run.Crashed', resource=Resource(root={'prefect.resource.id': 'prefect.task-run.01a20785-5c46-7d51-ae9e-2af8f0442423', 'prefect.resource.name': 'unit-tests-24a', 'prefect.run-count': '1', 'prefect.state-message': 'Execution was aborted by a termination signal.', 'prefect.state-name': 'Crashed', 'prefect.state-timestamp': '2026-11-23T08:28:43.753782+00:00', 'prefect.state-type': 'CRASHED', 'prefect.orchestration': 'client'}), related=[RelatedResource(root={'prefect.resource.id': 'prefect.flow-run.9a2a9c0f-2f59-4da0-bf46-146a6a603ccd', 'prefect.resource.role': 'flow-run', 'prefect.resource.name': 'miniature-swift'}), RelatedResource(root={'prefect.resource.id': 'prefect.flow.0072049d-78de-4387-ab92-afd664d1b52a', 'prefect.resource.role': 'flow', 'prefect.resource.name': 'code'})], payload={'intended': {'from': 'RUNNING', 'to': 'CRASHED'}, 'initial_state': {'type': 'RUNNING', 'name': 'Running', 'message': '', 'state_details': {}}, 'validated_state': {'type': 'CRASHED', 'name': 'Crashed', 'message': 'Execution was aborted by a termination signal.', 'state_details': {}, 'data': None}, 'task_run': {'name': 'unit-tests-24a', 'task_key': 'unit_tests-93788d64', 'dynamic_key': '24afb3e2-412a-42d7-bbfd-d8fad2186700', 'empirical_policy': {'max_retries': 0, 'retry_delay_seconds': 0.0, 'retries': 0, 'retry_delay': 0}, 'tags': [], 'labels': {}, 'task_inputs': {}, 'run_count': 1, 'flow_run_run_count': 1, 'expected_start_time': '2026-11-23T08:28:30.150429Z', 'start_time': '2026-11-23T08:28:30.151443Z', 'end_time': '2026-11-23T08:28:43.753782Z', 'total_run_time': 13.602339}}, id=UUID('01a20785-9169-75f0-a7a2-1f42cad5a795'), follows=UUID('01a20785-5c47-792f-842e-ca01689a2f1f'))
