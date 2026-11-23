@@ -1,10 +1,10 @@
-"""Command-line entry point for training and evaluating the sample model."""
+"""Command-line entry point for training and evaluating the churn model."""
 
-from model_pipeline import prepare_data, train_model, save_model, evaluate_model
+from model_pipeline import evaluate_model, prepare_data, save_model, train_model
 
 
 def main() -> dict[str, float]:
-    """Train the Iris classifier, save it, and report test accuracy."""
+    """Train the churn classifier, save it, and report test metrics."""
     X_train, X_test, y_train, y_test = prepare_data()
     model = train_model(X_train, y_train)
     save_model(model)

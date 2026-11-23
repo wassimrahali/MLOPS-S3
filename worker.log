@@ -172,3 +172,497 @@ $ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m bandit -q model_pipel
 [tester]	WARNING	nosec encountered (B603), but no failed test on file ./pipeline_prefect.py:22
 10:13:08.800 | INFO    | Task run 'code-security-a89' - Finished in state Completed()
 $ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m pytest tests/
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /mnt/c/Users/Wassim Rahali/MLOPS-TP3
+plugins: anyio-4.16.0, platformdirs-4.14.8
+collected 2 items
+
+tests/test_model.py ..                                                   [100%]
+
+============================== 2 passed in 28.67s ==============================
+10:13:43.891 | INFO    | Task run 'unit-tests-e02' - Finished in state Completed()
+10:13:43.996 | INFO    | Flow run 'axiomatic-platypus' - Finished in state Completed()
+10:13:56.927 | INFO    | Task run 'prepare-data-b08' - Finished in state Completed()
+10:13:57.257 | INFO    | Task run 'train-model-b0e' - Finished in state Completed()
+10:13:57.596 | INFO    | Task run 'save-model-a1f' - Finished in state Completed()
+10:13:57.694 | INFO    | Task run 'evaluate-model-cd5' - Finished in state Completed()
+10:13:57.802 | INFO    | Flow run 'agate-moth' - Finished in state Completed()
+Evaluation metrics: {'accuracy': 0.9}
+10:18:13.476 | INFO    | Flow run 'turquoise-toucanet' - Downloading flow code from storage at '.'
+10:18:13.941 | INFO    | Flow run 'turquoise-toucanet' - Beginning flow run 'turquoise-toucanet' for flow 'install'
+10:18:13.942 | INFO    | Flow run 'turquoise-toucanet' - View at http://127.0.0.1:4200/runs/flow-run/a0c7e5fb-4a0c-47c3-99cd-c798311d86c3
+$ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m pip install -r requirements.txt
+Requirement already satisfied: prefect<4.0,>=3.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 1)) (3.9.4)
+Requirement already satisfied: black>=24.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 2)) (26.10.1)
+Requirement already satisfied: flake8>=7.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 3)) (7.5.0)
+Requirement already satisfied: bandit>=1.7 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 4)) (1.9.4)
+Requirement already satisfied: pytest>=8.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 5)) (9.2.0)
+Requirement already satisfied: joblib>=1.3 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 6)) (1.6.0)
+Requirement already satisfied: numpy>=1.24 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 7)) (2.5.5)
+Requirement already satisfied: scikit-learn>=1.3 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 8)) (1.9.1)
+Requirement already satisfied: aiosqlite<1.0.0,>=0.17.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.22.1)
+Requirement already satisfied: alembic<2.0.0,>=1.7.5 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.20.1)
+Requirement already satisfied: amplitude-analytics<2.0.0,>=1.2.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.3.0)
+Requirement already satisfied: anyio<5.0.0,>=4.4.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.16.0)
+Requirement already satisfied: apprise<3.0.0,>=2.2.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.3.0)
+Requirement already satisfied: asgi-lifespan<3.0,>=1.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.1.0)
+Requirement already satisfied: asyncpg<1.0.0,>=0.23 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.32.0)
+Requirement already satisfied: cachetools<8.0,>=5.3 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (7.3.3)
+Requirement already satisfied: certifi>=2026.10.19 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.11.20)
+Requirement already satisfied: click<9,>=8.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (8.5.1)
+Requirement already satisfied: cloudpickle<4.0,>=2.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.1.3)
+Requirement already satisfied: coolname<6.0.0,>=1.0.4 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (5.0.0)
+Requirement already satisfied: cryptography>=36.0.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (50.0.2)
+Requirement already satisfied: cyclopts>=4.8.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (5.5.2)
+Requirement already satisfied: dateparser<2.0.0,>=1.1.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.5.1)
+Requirement already satisfied: docker<8.0,>=4.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (7.2.0)
+Requirement already satisfied: exceptiongroup>=1.0.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.3.2)
+Requirement already satisfied: fastapi<0.151,>=0.139.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.150.0)
+Requirement already satisfied: fsspec>=2022.5.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.9.0)
+Requirement already satisfied: graphviz>=0.20.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.21)
+Requirement already satisfied: griffe<3.0.0,>=0.49.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.4.1)
+Requirement already satisfied: httpcore<2.0.0,>=1.0.5 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.0.9)
+Requirement already satisfied: httpx!=0.23.2,>=0.23 in ./.venv/lib/python3.12/site-packages (from httpx[http2]!=0.23.2,>=0.23->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.28.1)
+Requirement already satisfied: humanize<5.0.0,>=4.9.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.17.0)
+Requirement already satisfied: jinja2-humanize-extension>=0.4.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.4.0)
+Requirement already satisfied: jinja2<4.0.0,>=3.1.6 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: jsonpatch<2.0,>=1.32 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.48)
+Requirement already satisfied: jsonschema<5.0.0,>=4.18.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.26.0)
+Requirement already satisfied: opentelemetry-api<2.0.0,>=1.27.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.45.2)
+Requirement already satisfied: orjson<4.0,>=3.7 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.13.0)
+Requirement already satisfied: packaging<27,>=21.3 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (26.3)
+Requirement already satisfied: pathspec>=0.10.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.1.1)
+Requirement already satisfied: pendulum<4,>=3.1.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.3.0)
+Requirement already satisfied: pluggy>=1.6.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.7.0)
+Requirement already satisfied: prometheus-client>=0.20.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.26.0)
+Requirement already satisfied: pydantic!=2.11.0,!=2.11.1,!=2.11.2,!=2.11.3,!=2.11.4,<3.0.0,>=2.10.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.14.4)
+Requirement already satisfied: pydantic-core<3.0.0,>=2.12.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.50.5)
+Requirement already satisfied: pydantic-extra-types<3.0.0,>=2.8.2 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.11.1)
+Requirement already satisfied: pydantic-settings<3.0.0,>=2.9.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.16.3)
+Requirement already satisfied: pydocket>=0.27.2 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.31.0)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.8.2 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.9.0.post0)
+Requirement already satisfied: python-slugify<9.2,>=9 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (9.1.3)
+Requirement already satisfied: pytz<2027,>=2021.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.6)
+Requirement already satisfied: pyyaml<7.0.0,>=5.4.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (6.0.4)
+Requirement already satisfied: readchar<5.0.0,>=4.0.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.2.2)
+Requirement already satisfied: rfc3339-validator<0.2.0,>=0.1.4 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.1.4)
+Requirement already satisfied: rich<16.0,>=11.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (15.0.0)
+Requirement already satisfied: ruamel-yaml!=0.19.0,>=0.17.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.19.1)
+Requirement already satisfied: semver>=3.0.4 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.1.2)
+Requirement already satisfied: sniffio<2.0.0,>=1.3.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.3.1)
+Requirement already satisfied: sqlalchemy<3.0.0,>=2.0 in ./.venv/lib/python3.12/site-packages (from sqlalchemy[asyncio]<3.0.0,>=2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.1.9)
+Requirement already satisfied: starlette>=1.0.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.10.0)
+Requirement already satisfied: toml>=0.10.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.10.2)
+Requirement already satisfied: typing-extensions<5.0.0,>=4.10.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.16.0)
+Requirement already satisfied: uvicorn!=0.29.0,>=0.14.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.54.0)
+Requirement already satisfied: websockets<17.0,>=15.0.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (16.1.1)
+Requirement already satisfied: whenever<0.12.0,>=0.10.5 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.11.0)
+Requirement already satisfied: Mako in ./.venv/lib/python3.12/site-packages (from alembic<2.0.0,>=1.7.5->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: idna>=2.8 in ./.venv/lib/python3.12/site-packages (from anyio<5.0.0,>=4.4.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.20)
+Requirement already satisfied: requests in ./.venv/lib/python3.12/site-packages (from apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.34.2)
+Requirement already satisfied: urllib3 in ./.venv/lib/python3.12/site-packages (from apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.8.0)
+Requirement already satisfied: requests-oauthlib in ./.venv/lib/python3.12/site-packages (from apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.0.0)
+Requirement already satisfied: markdown in ./.venv/lib/python3.12/site-packages (from apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.11.3)
+Requirement already satisfied: regex>=2024.9.11 in ./.venv/lib/python3.12/site-packages (from dateparser<2.0.0,>=1.1.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.11.19)
+Requirement already satisfied: tzlocal>=0.2 in ./.venv/lib/python3.12/site-packages (from dateparser<2.0.0,>=1.1.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (5.4.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in ./.venv/lib/python3.12/site-packages (from fastapi<0.151,>=0.139.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.4.5)
+Requirement already satisfied: annotated-doc>=0.0.2 in ./.venv/lib/python3.12/site-packages (from fastapi<0.151,>=0.139.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.0.7)
+Requirement already satisfied: griffecli==2.4.1 in ./.venv/lib/python3.12/site-packages (from griffe<3.0.0,>=0.49.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.4.1)
+Requirement already satisfied: griffelib==2.4.1 in ./.venv/lib/python3.12/site-packages (from griffe<3.0.0,>=0.49.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.4.1)
+Requirement already satisfied: colorama>=0.4 in ./.venv/lib/python3.12/site-packages (from griffecli==2.4.1->griffe<3.0.0,>=0.49.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.4.6)
+Requirement already satisfied: h11>=0.16 in ./.venv/lib/python3.12/site-packages (from httpcore<2.0.0,>=1.0.5->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.16.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.12/site-packages (from jinja2<4.0.0,>=3.1.6->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.0.4)
+Requirement already satisfied: jsonpointer>=3.8 in ./.venv/lib/python3.12/site-packages (from jsonpatch<2.0,>=1.32->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.12)
+Requirement already satisfied: attrs>=22.2.0 in ./.venv/lib/python3.12/site-packages (from jsonschema<5.0.0,>=4.18.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./.venv/lib/python3.12/site-packages (from jsonschema<5.0.0,>=4.18.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in ./.venv/lib/python3.12/site-packages (from jsonschema<5.0.0,>=4.18.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in ./.venv/lib/python3.12/site-packages (from jsonschema<5.0.0,>=4.18.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.9.1)
+Requirement already satisfied: tzdata>=2020.1 in ./.venv/lib/python3.12/site-packages (from pendulum<4,>=3.1.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.6)
+Requirement already satisfied: annotated-types>=0.6.0 in ./.venv/lib/python3.12/site-packages (from pydantic!=2.11.0,!=2.11.1,!=2.11.2,!=2.11.3,!=2.11.4,<3.0.0,>=2.10.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.8.0)
+Requirement already satisfied: python-dotenv>=1.2.2 in ./.venv/lib/python3.12/site-packages (from pydantic-settings<3.0.0,>=2.9.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.2.4)
+Requirement already satisfied: six>=1.5 in ./.venv/lib/python3.12/site-packages (from python-dateutil<3.0.0,>=2.8.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.17.0)
+Requirement already satisfied: text-unidecode>=1.3 in ./.venv/lib/python3.12/site-packages (from python-slugify<9.2,>=9->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.3)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./.venv/lib/python3.12/site-packages (from rich<16.0,>=11.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.3.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./.venv/lib/python3.12/site-packages (from rich<16.0,>=11.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.21.0)
+Requirement already satisfied: greenlet>=1 in ./.venv/lib/python3.12/site-packages (from sqlalchemy[asyncio]<3.0.0,>=2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.5.6)
+Requirement already satisfied: mypy-extensions>=0.4.3 in ./.venv/lib/python3.12/site-packages (from black>=24.0->-r requirements.txt (line 2)) (1.2.0)
+Requirement already satisfied: platformdirs>=2 in ./.venv/lib/python3.12/site-packages (from black>=24.0->-r requirements.txt (line 2)) (4.14.8)
+Requirement already satisfied: pytokens~=0.4.0 in ./.venv/lib/python3.12/site-packages (from black>=24.0->-r requirements.txt (line 2)) (0.4.1)
+Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in ./.venv/lib/python3.12/site-packages (from flake8>=7.0->-r requirements.txt (line 3)) (0.7.0)
+Requirement already satisfied: pycodestyle<2.16.0,>=2.15.0 in ./.venv/lib/python3.12/site-packages (from flake8>=7.0->-r requirements.txt (line 3)) (2.15.0)
+Requirement already satisfied: pyflakes<4.2.0,>=4.1.0 in ./.venv/lib/python3.12/site-packages (from flake8>=7.0->-r requirements.txt (line 3)) (4.1.0)
+Requirement already satisfied: stevedore>=1.20.0 in ./.venv/lib/python3.12/site-packages (from bandit>=1.7->-r requirements.txt (line 4)) (5.10.0)
+Requirement already satisfied: iniconfig>=2 in ./.venv/lib/python3.12/site-packages (from pytest>=8.0->-r requirements.txt (line 5)) (2.3.1)
+Requirement already satisfied: scipy>=1.10.0 in ./.venv/lib/python3.12/site-packages (from scikit-learn>=1.3->-r requirements.txt (line 8)) (1.18.1)
+Requirement already satisfied: narwhals>=2.0.1 in ./.venv/lib/python3.12/site-packages (from scikit-learn>=1.3->-r requirements.txt (line 8)) (2.29.0)
+Requirement already satisfied: threadpoolctl>=3.5.0 in ./.venv/lib/python3.12/site-packages (from scikit-learn>=1.3->-r requirements.txt (line 8)) (3.8.0)
+Requirement already satisfied: cffi>=2.0.0 in ./.venv/lib/python3.12/site-packages (from cryptography>=36.0.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.1.1)
+Requirement already satisfied: pycparser in ./.venv/lib/python3.12/site-packages (from cffi>=2.0.0->cryptography>=36.0.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.12)
+Requirement already satisfied: docstring-parser<4.0,>=0.15 in ./.venv/lib/python3.12/site-packages (from cyclopts>=4.8.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.18.0)
+Requirement already satisfied: rich-rst<3,>=2.0.1 in ./.venv/lib/python3.12/site-packages (from cyclopts>=4.8.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.2.0)
+Requirement already satisfied: h2<5,>=3 in ./.venv/lib/python3.12/site-packages (from httpx[http2]!=0.23.2,>=0.23->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.4.1)
+Requirement already satisfied: hyperframe<7,>=6.1 in ./.venv/lib/python3.12/site-packages (from h2<5,>=3->httpx[http2]!=0.23.2,>=0.23->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (6.1.0)
+Requirement already satisfied: hpack<5,>=4.2 in ./.venv/lib/python3.12/site-packages (from h2<5,>=3->httpx[http2]!=0.23.2,>=0.23->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.2.0)
+Requirement already satisfied: mdurl~=0.1 in ./.venv/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich<16.0,>=11.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.1.2)
+Requirement already satisfied: burner-redis>=0.1.7 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.1.7)
+Requirement already satisfied: cronsim>=2.6 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.8)
+Requirement already satisfied: py-key-value-aio>=0.3.0 in ./.venv/lib/python3.12/site-packages (from py-key-value-aio[memory,redis]>=0.3.0->pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.5.0)
+Requirement already satisfied: python-json-logger>=2.0.7 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.2.0)
+Requirement already satisfied: redis>=6 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (8.1.0)
+Requirement already satisfied: typer>=0.15.1 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.29.2)
+Requirement already satisfied: uncalled-for>=0.6.0 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.6.2)
+Requirement already satisfied: beartype>=0.20.0 in ./.venv/lib/python3.12/site-packages (from py-key-value-aio>=0.3.0->py-key-value-aio[memory,redis]>=0.3.0->pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.23.1)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.12/site-packages (from requests->apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.5.2)
+Requirement already satisfied: shellingham>=1.3.0 in ./.venv/lib/python3.12/site-packages (from typer>=0.15.1->pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.5.4)
+Requirement already satisfied: oauthlib>=3.0.0 in ./.venv/lib/python3.12/site-packages (from requests-oauthlib->apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.0.1)
+10:18:21.340 | INFO    | Task run 'install-dependencies-861' - Finished in state Completed()
+10:18:21.375 | INFO    | Flow run 'turquoise-toucanet' - Finished in state Completed()
+10:24:08.451 | INFO    | Flow run 'asparagus-jaguar' - Downloading flow code from storage at '.'
+10:24:08.893 | INFO    | Flow run 'asparagus-jaguar' - Beginning flow run 'asparagus-jaguar' for flow 'all'
+10:24:08.894 | INFO    | Flow run 'asparagus-jaguar' - View at http://127.0.0.1:4200/runs/flow-run/3807eb31-87ef-4fe8-b469-d894f8903614
+10:24:10.348 | INFO    | Flow run 'emotional-elephant' - Beginning subflow run 'emotional-elephant' for flow 'code'
+10:24:10.349 | INFO    | Flow run 'emotional-elephant' - View at http://127.0.0.1:4200/runs/flow-run/ddace7af-0c59-4a5f-8bdc-e0e7d3a45df1
+10:24:10.441 | INFO    | Task run 'fetch-project-6f1' - Finished in state Completed()
+Remote project fetch disabled.
+$ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m pip install -r requirements.txt
+Requirement already satisfied: prefect<4.0,>=3.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 1)) (3.9.4)
+Requirement already satisfied: black>=24.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 2)) (26.10.1)
+Requirement already satisfied: flake8>=7.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 3)) (7.5.0)
+Requirement already satisfied: bandit>=1.7 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 4)) (1.9.4)
+Requirement already satisfied: pytest>=8.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 5)) (9.2.0)
+Requirement already satisfied: joblib>=1.3 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 6)) (1.6.0)
+Requirement already satisfied: numpy>=1.24 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 7)) (2.5.5)
+Requirement already satisfied: scikit-learn>=1.3 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 8)) (1.9.1)
+Requirement already satisfied: aiosqlite<1.0.0,>=0.17.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.22.1)
+Requirement already satisfied: alembic<2.0.0,>=1.7.5 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.20.1)
+Requirement already satisfied: amplitude-analytics<2.0.0,>=1.2.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.3.0)
+Requirement already satisfied: anyio<5.0.0,>=4.4.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.16.0)
+Requirement already satisfied: apprise<3.0.0,>=2.2.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.3.0)
+Requirement already satisfied: asgi-lifespan<3.0,>=1.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.1.0)
+Requirement already satisfied: asyncpg<1.0.0,>=0.23 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.32.0)
+Requirement already satisfied: cachetools<8.0,>=5.3 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (7.3.3)
+Requirement already satisfied: certifi>=2026.10.19 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.11.20)
+Requirement already satisfied: click<9,>=8.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (8.5.1)
+Requirement already satisfied: cloudpickle<4.0,>=2.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.1.3)
+Requirement already satisfied: coolname<6.0.0,>=1.0.4 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (5.0.0)
+Requirement already satisfied: cryptography>=36.0.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (50.0.2)
+Requirement already satisfied: cyclopts>=4.8.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (5.5.2)
+Requirement already satisfied: dateparser<2.0.0,>=1.1.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.5.1)
+Requirement already satisfied: docker<8.0,>=4.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (7.2.0)
+Requirement already satisfied: exceptiongroup>=1.0.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.3.2)
+Requirement already satisfied: fastapi<0.151,>=0.139.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.150.0)
+Requirement already satisfied: fsspec>=2022.5.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.9.0)
+Requirement already satisfied: graphviz>=0.20.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.21)
+Requirement already satisfied: griffe<3.0.0,>=0.49.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.4.1)
+Requirement already satisfied: httpcore<2.0.0,>=1.0.5 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.0.9)
+Requirement already satisfied: httpx!=0.23.2,>=0.23 in ./.venv/lib/python3.12/site-packages (from httpx[http2]!=0.23.2,>=0.23->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.28.1)
+Requirement already satisfied: humanize<5.0.0,>=4.9.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.17.0)
+Requirement already satisfied: jinja2-humanize-extension>=0.4.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.4.0)
+Requirement already satisfied: jinja2<4.0.0,>=3.1.6 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: jsonpatch<2.0,>=1.32 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.48)
+Requirement already satisfied: jsonschema<5.0.0,>=4.18.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.26.0)
+Requirement already satisfied: opentelemetry-api<2.0.0,>=1.27.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.45.2)
+Requirement already satisfied: orjson<4.0,>=3.7 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.13.0)
+Requirement already satisfied: packaging<27,>=21.3 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (26.3)
+Requirement already satisfied: pathspec>=0.10.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.1.1)
+Requirement already satisfied: pendulum<4,>=3.1.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.3.0)
+Requirement already satisfied: pluggy>=1.6.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.7.0)
+Requirement already satisfied: prometheus-client>=0.20.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.26.0)
+Requirement already satisfied: pydantic!=2.11.0,!=2.11.1,!=2.11.2,!=2.11.3,!=2.11.4,<3.0.0,>=2.10.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.14.4)
+Requirement already satisfied: pydantic-core<3.0.0,>=2.12.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.50.5)
+Requirement already satisfied: pydantic-extra-types<3.0.0,>=2.8.2 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.11.1)
+Requirement already satisfied: pydantic-settings<3.0.0,>=2.9.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.16.3)
+Requirement already satisfied: pydocket>=0.27.2 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.31.0)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.8.2 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.9.0.post0)
+Requirement already satisfied: python-slugify<9.2,>=9 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (9.1.3)
+Requirement already satisfied: pytz<2027,>=2021.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.6)
+Requirement already satisfied: pyyaml<7.0.0,>=5.4.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (6.0.4)
+Requirement already satisfied: readchar<5.0.0,>=4.0.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.2.2)
+Requirement already satisfied: rfc3339-validator<0.2.0,>=0.1.4 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.1.4)
+Requirement already satisfied: rich<16.0,>=11.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (15.0.0)
+Requirement already satisfied: ruamel-yaml!=0.19.0,>=0.17.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.19.1)
+Requirement already satisfied: semver>=3.0.4 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.1.2)
+Requirement already satisfied: sniffio<2.0.0,>=1.3.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.3.1)
+Requirement already satisfied: sqlalchemy<3.0.0,>=2.0 in ./.venv/lib/python3.12/site-packages (from sqlalchemy[asyncio]<3.0.0,>=2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.1.9)
+Requirement already satisfied: starlette>=1.0.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.10.0)
+Requirement already satisfied: toml>=0.10.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.10.2)
+Requirement already satisfied: typing-extensions<5.0.0,>=4.10.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.16.0)
+Requirement already satisfied: uvicorn!=0.29.0,>=0.14.0 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.54.0)
+Requirement already satisfied: websockets<17.0,>=15.0.1 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (16.1.1)
+Requirement already satisfied: whenever<0.12.0,>=0.10.5 in ./.venv/lib/python3.12/site-packages (from prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.11.0)
+Requirement already satisfied: Mako in ./.venv/lib/python3.12/site-packages (from alembic<2.0.0,>=1.7.5->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: idna>=2.8 in ./.venv/lib/python3.12/site-packages (from anyio<5.0.0,>=4.4.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.20)
+Requirement already satisfied: requests in ./.venv/lib/python3.12/site-packages (from apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.34.2)
+Requirement already satisfied: urllib3 in ./.venv/lib/python3.12/site-packages (from apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.8.0)
+Requirement already satisfied: requests-oauthlib in ./.venv/lib/python3.12/site-packages (from apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.0.0)
+Requirement already satisfied: markdown in ./.venv/lib/python3.12/site-packages (from apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.11.3)
+Requirement already satisfied: regex>=2024.9.11 in ./.venv/lib/python3.12/site-packages (from dateparser<2.0.0,>=1.1.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.11.19)
+Requirement already satisfied: tzlocal>=0.2 in ./.venv/lib/python3.12/site-packages (from dateparser<2.0.0,>=1.1.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (5.4.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in ./.venv/lib/python3.12/site-packages (from fastapi<0.151,>=0.139.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.4.5)
+Requirement already satisfied: annotated-doc>=0.0.2 in ./.venv/lib/python3.12/site-packages (from fastapi<0.151,>=0.139.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.0.7)
+Requirement already satisfied: griffecli==2.4.1 in ./.venv/lib/python3.12/site-packages (from griffe<3.0.0,>=0.49.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.4.1)
+Requirement already satisfied: griffelib==2.4.1 in ./.venv/lib/python3.12/site-packages (from griffe<3.0.0,>=0.49.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.4.1)
+Requirement already satisfied: colorama>=0.4 in ./.venv/lib/python3.12/site-packages (from griffecli==2.4.1->griffe<3.0.0,>=0.49.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.4.6)
+Requirement already satisfied: h11>=0.16 in ./.venv/lib/python3.12/site-packages (from httpcore<2.0.0,>=1.0.5->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.16.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.12/site-packages (from jinja2<4.0.0,>=3.1.6->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.0.4)
+Requirement already satisfied: jsonpointer>=3.8 in ./.venv/lib/python3.12/site-packages (from jsonpatch<2.0,>=1.32->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.12)
+Requirement already satisfied: attrs>=22.2.0 in ./.venv/lib/python3.12/site-packages (from jsonschema<5.0.0,>=4.18.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./.venv/lib/python3.12/site-packages (from jsonschema<5.0.0,>=4.18.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in ./.venv/lib/python3.12/site-packages (from jsonschema<5.0.0,>=4.18.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in ./.venv/lib/python3.12/site-packages (from jsonschema<5.0.0,>=4.18.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.9.1)
+Requirement already satisfied: tzdata>=2020.1 in ./.venv/lib/python3.12/site-packages (from pendulum<4,>=3.1.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2026.6)
+Requirement already satisfied: annotated-types>=0.6.0 in ./.venv/lib/python3.12/site-packages (from pydantic!=2.11.0,!=2.11.1,!=2.11.2,!=2.11.3,!=2.11.4,<3.0.0,>=2.10.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.8.0)
+Requirement already satisfied: python-dotenv>=1.2.2 in ./.venv/lib/python3.12/site-packages (from pydantic-settings<3.0.0,>=2.9.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.2.4)
+Requirement already satisfied: six>=1.5 in ./.venv/lib/python3.12/site-packages (from python-dateutil<3.0.0,>=2.8.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.17.0)
+Requirement already satisfied: text-unidecode>=1.3 in ./.venv/lib/python3.12/site-packages (from python-slugify<9.2,>=9->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.3)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./.venv/lib/python3.12/site-packages (from rich<16.0,>=11.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.3.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./.venv/lib/python3.12/site-packages (from rich<16.0,>=11.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.21.0)
+Requirement already satisfied: greenlet>=1 in ./.venv/lib/python3.12/site-packages (from sqlalchemy[asyncio]<3.0.0,>=2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.5.6)
+Requirement already satisfied: mypy-extensions>=0.4.3 in ./.venv/lib/python3.12/site-packages (from black>=24.0->-r requirements.txt (line 2)) (1.2.0)
+Requirement already satisfied: platformdirs>=2 in ./.venv/lib/python3.12/site-packages (from black>=24.0->-r requirements.txt (line 2)) (4.14.8)
+Requirement already satisfied: pytokens~=0.4.0 in ./.venv/lib/python3.12/site-packages (from black>=24.0->-r requirements.txt (line 2)) (0.4.1)
+Requirement already satisfied: mccabe<0.8.0,>=0.7.0 in ./.venv/lib/python3.12/site-packages (from flake8>=7.0->-r requirements.txt (line 3)) (0.7.0)
+Requirement already satisfied: pycodestyle<2.16.0,>=2.15.0 in ./.venv/lib/python3.12/site-packages (from flake8>=7.0->-r requirements.txt (line 3)) (2.15.0)
+Requirement already satisfied: pyflakes<4.2.0,>=4.1.0 in ./.venv/lib/python3.12/site-packages (from flake8>=7.0->-r requirements.txt (line 3)) (4.1.0)
+Requirement already satisfied: stevedore>=1.20.0 in ./.venv/lib/python3.12/site-packages (from bandit>=1.7->-r requirements.txt (line 4)) (5.10.0)
+Requirement already satisfied: iniconfig>=2 in ./.venv/lib/python3.12/site-packages (from pytest>=8.0->-r requirements.txt (line 5)) (2.3.1)
+Requirement already satisfied: scipy>=1.10.0 in ./.venv/lib/python3.12/site-packages (from scikit-learn>=1.3->-r requirements.txt (line 8)) (1.18.1)
+Requirement already satisfied: narwhals>=2.0.1 in ./.venv/lib/python3.12/site-packages (from scikit-learn>=1.3->-r requirements.txt (line 8)) (2.29.0)
+Requirement already satisfied: threadpoolctl>=3.5.0 in ./.venv/lib/python3.12/site-packages (from scikit-learn>=1.3->-r requirements.txt (line 8)) (3.8.0)
+Requirement already satisfied: cffi>=2.0.0 in ./.venv/lib/python3.12/site-packages (from cryptography>=36.0.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.1.1)
+Requirement already satisfied: pycparser in ./.venv/lib/python3.12/site-packages (from cffi>=2.0.0->cryptography>=36.0.1->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.12)
+Requirement already satisfied: docstring-parser<4.0,>=0.15 in ./.venv/lib/python3.12/site-packages (from cyclopts>=4.8.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.18.0)
+Requirement already satisfied: rich-rst<3,>=2.0.1 in ./.venv/lib/python3.12/site-packages (from cyclopts>=4.8.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.2.0)
+Requirement already satisfied: h2<5,>=3 in ./.venv/lib/python3.12/site-packages (from httpx[http2]!=0.23.2,>=0.23->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.4.1)
+Requirement already satisfied: hyperframe<7,>=6.1 in ./.venv/lib/python3.12/site-packages (from h2<5,>=3->httpx[http2]!=0.23.2,>=0.23->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (6.1.0)
+Requirement already satisfied: hpack<5,>=4.2 in ./.venv/lib/python3.12/site-packages (from h2<5,>=3->httpx[http2]!=0.23.2,>=0.23->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.2.0)
+Requirement already satisfied: mdurl~=0.1 in ./.venv/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich<16.0,>=11.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.1.2)
+Requirement already satisfied: burner-redis>=0.1.7 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.1.7)
+Requirement already satisfied: cronsim>=2.6 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (2.8)
+Requirement already satisfied: py-key-value-aio>=0.3.0 in ./.venv/lib/python3.12/site-packages (from py-key-value-aio[memory,redis]>=0.3.0->pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.5.0)
+Requirement already satisfied: python-json-logger>=2.0.7 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.2.0)
+Requirement already satisfied: redis>=6 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (8.1.0)
+Requirement already satisfied: typer>=0.15.1 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.29.2)
+Requirement already satisfied: uncalled-for>=0.6.0 in ./.venv/lib/python3.12/site-packages (from pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.6.2)
+Requirement already satisfied: beartype>=0.20.0 in ./.venv/lib/python3.12/site-packages (from py-key-value-aio>=0.3.0->py-key-value-aio[memory,redis]>=0.3.0->pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (0.23.1)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.12/site-packages (from requests->apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (3.5.2)
+Requirement already satisfied: shellingham>=1.3.0 in ./.venv/lib/python3.12/site-packages (from typer>=0.15.1->pydocket>=0.27.2->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (1.5.4)
+Requirement already satisfied: oauthlib>=3.0.0 in ./.venv/lib/python3.12/site-packages (from requests-oauthlib->apprise<3.0.0,>=2.2.0->prefect<4.0,>=3.0->-r requirements.txt (line 1)) (4.0.1)
+10:24:17.538 | INFO    | Task run 'install-dependencies-731' - Finished in state Completed()
+$ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m black --line-length=100 model_pipeline.py main.py pipeline_prefect.py
+All done! ✨ 🍰 ✨
+3 files left unchanged.
+10:24:18.814 | INFO    | Task run 'format-code-7c0' - Finished in state Completed()
+$ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m flake8 --max-line-length=100 model_pipeline.py main.py pipeline_prefect.py
+10:24:20.078 | INFO    | Task run 'code-quality-515' - Finished in state Completed()
+$ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m bandit -q model_pipeline.py main.py pipeline_prefect.py
+[manager]	WARNING	Test in comment: subprocess is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: is is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: required is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: for is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: the is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: project is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: tool is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: commands is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: args is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: are is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: passed is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: without is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: a is not a test name or id, ignoring
+[manager]	WARNING	Test in comment: shell is not a test name or id, ignoring
+[tester]	WARNING	nosec encountered (B603), but no failed test on file ./pipeline_prefect.py:22
+10:24:22.305 | INFO    | Task run 'code-security-f31' - Finished in state Completed()
+$ /mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/bin/python -m pytest tests/
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0
+rootdir: /mnt/c/Users/Wassim Rahali/MLOPS-TP3
+plugins: anyio-4.16.0, platformdirs-4.14.8
+collected 2 items
+
+tests/test_model.py ..                                                   [100%]
+
+============================== 2 passed in 12.69s ==============================
+10:24:38.535 | INFO    | Task run 'unit-tests-70d' - Finished in state Completed()
+10:24:38.584 | INFO    | Flow run 'emotional-elephant' - Finished in state Completed()
+10:24:51.175 | INFO    | Task run 'prepare-data-9d0' - Finished in state Completed()
+10:24:51.471 | INFO    | Task run 'train-model-9f7' - Finished in state Completed()
+10:24:51.715 | INFO    | Task run 'save-model-766' - Finished in state Completed()
+10:24:51.745 | INFO    | Task run 'evaluate-model-9d0' - Finished in state Completed()
+10:24:51.783 | INFO    | Flow run 'asparagus-jaguar' - Finished in state Completed()
+Evaluation metrics: {'accuracy': 0.9}
+14:15:07.255 | WARNING | prefect.FlowRunCancellingObserver - The FlowRunCancellingObserver websocket failed with an exception. Switching to polling mode until it reconnects.
+Traceback (most recent call last):
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/_internal/_observation_delivery.py", line 334, in _consume
+    async for event in self._subscriber:
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/events/clients.py", line 903, in __anext__
+    message = orjson.loads(await self._websocket.recv())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/websockets/asyncio/connection.py", line 324, in recv
+    raise self.protocol.close_exc from self.recv_exc
+websockets.exceptions.ConnectionClosedError: received 1012 (service restart); then sent 1012 (service restart)
+14:18:47.554 | INFO    | prefect.runner - Pausing all deployments...
+
+Failed the last 3 attempts. Please check your environment and configuration.
+Examples of recent errors:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/utilities/services.py", line 64, in critical_service_loop
+    await workload()
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/runner/_scheduled_run_poller.py", line 112, in _get_and_submit_flow_runs
+    runs_response = await self._get_scheduled_flow_runs()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/runner/_scheduled_run_poller.py", line 92, in _get_scheduled_flow_runs
+    runs = await self._client.get_scheduled_flow_runs_for_deployments(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/client/orchestration/_deployments/client.py", line 1359, in get_scheduled_flow_runs_for_deployments
+    response = await self.request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/client/orchestration/base.py", line 53, in request
+    return await self._client.send(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/client/base.py", line 430, in send
+    response = await self._send_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/client/base.py", line 314, in _send_with_retry
+    response = await send(request, *send_args, **send_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/deploiement_prefect.py", line 31, in <module>
+    main()
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/deploiement_prefect.py", line 27, in main
+    serve(*deployments)
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/flows.py", line 3145, in serve
+    asyncio.run(runner.start())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/runner/runner.py", line 602, in start
+    async with self:
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/runner/runner.py", line 894, in __aexit__
+    await self._pause_schedules()
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/runner/runner.py", line 659, in _pause_schedules
+    await self._client.pause_deployment(deployment_id)
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/client/orchestration/_deployments/client.py", line 938, in pause_deployment
+    await self._set_deployment_paused_state(deployment_id, paused=True)
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/client/orchestration/_deployments/client.py", line 895, in _set_deployment_paused_state
+    await self.request(
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/client/orchestration/base.py", line 53, in request
+    return await self._client.send(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/client/base.py", line 430, in send
+    response = await self._send_with_retry(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/prefect/client/base.py", line 314, in _send_with_retry
+    response = await send(request, *send_args, **send_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/mnt/c/Users/Wassim Rahali/MLOPS-TP3/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed

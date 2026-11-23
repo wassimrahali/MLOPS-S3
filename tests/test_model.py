@@ -1,24 +1,18 @@
-"""Fast unit tests for the sample model pipeline."""
+"""Unit tests for the churn data preparation and model."""
 
-import numpy as np
-
-from model_pipeline import prepare_data, train_model
+from model_pipeline import prepare_data, train_model, evaluate_model
 
 
-def test_prepare_data_returns_valid_split() -> None:
-    """The data split should have matching rows and all three Iris classes."""
+def test_prepare_data_shapes():
     X_train, X_test, y_train, y_test = prepare_data()
-
-    assert X_train.shape == (120, 4)
-    assert X_test.shape == (30, 4)
-    assert len(y_train) == len(X_train)
-    assert len(y_test) == len(X_test)
-    assert set(np.unique(y_train)) == {0, 1, 2}
+    assert len(X_train) == len(y_train)
+    assert len(X_test) == len(y_test)
+    assert "Exited" not in X_train.columns
+    assert set(y_train.unique()) <= {0, 1}
 
 
-def test_train_model_fits_classifier() -> None:
-    """Training should produce a classifier that predicts each test row."""
-    X_train, X_test, y_train, _ = prepare_data()
+def test_model_beats_trivial_baseline():
+    X_train, X_test, y_train, y_test = prepare_data()
     model = train_model(X_train, y_train)
-
-    assert model.predict(X_test).shape == (30,)
+    metrics = evaluate_model(model, X_test, y_test)
+    assert metrics["accuracy"] > 0.80
