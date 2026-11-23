@@ -1,4 +1,4 @@
-"""Reusable data preparation, training, persistence, and evaluation functions."""
+"""Reusable data preparation, training, persistence, evaluation and prediction functions."""
 
 from pathlib import Path
 from typing import Any
@@ -10,6 +10,7 @@ from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import train_test_split
 
 DATA_PATH = Path(__file__).resolve().parent / "data" / "Churn_Modelling.csv"
+MODEL_PATH = Path(__file__).resolve().parent / "model.joblib"
 TARGET = "Exited"
 ID_COLUMNS = ["RowNumber", "CustomerId", "Surname"]
 CATEGORICAL_COLUMNS = ["Geography", "Gender"]
@@ -40,14 +41,14 @@ def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> RandomForestClassi
     return model.fit(X_train, y_train)
 
 
-def save_model(model: Any, path: str | Path = "model.joblib") -> None:
+def save_model(model: Any, path: str | Path = MODEL_PATH) -> None:
     """Serialize a fitted model to the specified path."""
     model_path = Path(path)
     model_path.parent.mkdir(parents=True, exist_ok=True)
     dump(model, model_path)
 
 
-def load_model(path: str | Path = "model.joblib") -> Any:
+def load_model(path: str | Path = MODEL_PATH) -> Any:
     """Load a serialized model from disk."""
     return load(Path(path))
 
@@ -59,3 +60,12 @@ def evaluate_model(model: Any, X_test: pd.DataFrame, y_test: pd.Series) -> dict[
         "accuracy": float(accuracy_score(y_test, predictions)),
         "f1": float(f1_score(y_test, predictions)),
     }
+
+
+def predict(model: Any, features: dict[str, Any]) -> int:
+    """Predict churn (1) or no churn (0) for one customer."""
+    df = pd.DataFrame([features])
+    df = pd.get_dummies(df, columns=CATEGORICAL_COLUMNS)
+    # Align with the training columns; missing dummy columns are filled with 0.
+    df = df.reindex(columns=model.feature_names_in_, fill_value=0)
+    return int(model.predict(df)[0])

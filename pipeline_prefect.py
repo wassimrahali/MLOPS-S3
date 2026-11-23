@@ -112,6 +112,12 @@ def evaluate_model_task(model) -> dict[str, float]:
     return metrics
 
 
+@task(name="start-api")
+def start_api(host: str = "0.0.0.0", port: int = 8000) -> None:  # nosec B104
+    """Launch the FastAPI prediction service with Uvicorn."""
+    run([sys.executable, "-m", "uvicorn", "app:app", "--host", host, "--port", str(port)])
+
+
 @flow(name="install")
 def install_flow() -> None:
     """Install project dependencies."""
@@ -154,13 +160,19 @@ def all_flow(fetch_remote: bool = False) -> dict[str, float]:
     return evaluate_model_task(model)
 
 
+@flow(name="api")
+def api_flow() -> None:
+    """Start the prediction API."""
+    start_api()
+
+
 def main() -> None:
     """Parse CLI options and run the requested flow."""
     parser = argparse.ArgumentParser(description="Run the Prefect MLOps workshop pipeline.")
     parser.add_argument(
         "--flow",
         required=True,
-        choices=["all", "train", "entrainement", "evaluate", "code", "install"],
+        choices=["all", "train", "entrainement", "evaluate", "code", "install", "api"],
         help="Flow to execute (entrainement is an alias for train).",
     )
     parser.add_argument(
@@ -178,6 +190,8 @@ def main() -> None:
         evaluate_flow()
     elif args.flow == "code":
         code_flow(fetch_remote=args.fetch_project)
+    elif args.flow == "api":
+        api_flow()
     else:
         install_flow()
 
